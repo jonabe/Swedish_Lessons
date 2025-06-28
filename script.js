@@ -137,10 +137,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 const pronunciationMatch = nextLine.match(/^\s+\*\s*Pronunciation Link:\s*`[^`]+`/);
                 
                 if (pronunciationMatch) {
-                    // Extract Swedish word from current line
-                    const swedishMatch = line.match(/`([^`]+)`\s*$/);
-                    if (swedishMatch) {
-                        const swedishWord = swedishMatch[1];
+                    let swedishWord = null;
+                    
+                    // Try different patterns to extract Swedish text
+                    // Pattern 1: Text in backticks at end of line (e.g., `Hej`)
+                    const backtickMatch = line.match(/`([^`]+)`\s*$/);
+                    if (backtickMatch) {
+                        swedishWord = backtickMatch[1];
+                    } else {
+                        // Pattern 2: Letter patterns (e.g., **Letter Å, å**)
+                        const letterMatch = line.match(/\*\*Letter ([ÅÄÖåäö]), [ÅÄÖåäö]\*\*/);
+                        if (letterMatch) {
+                            swedishWord = letterMatch[1];
+                        } else {
+                            // Pattern 3: Word with colon and backticks (e.g., **boat:** `båt`)
+                            const wordMatch = line.match(/\*\*[^:]+:\*\*\s*`([^`]+)`/);
+                            if (wordMatch) {
+                                swedishWord = wordMatch[1];
+                            }
+                        }
+                    }
+                    
+                    if (swedishWord) {
                         // Add the button placeholder to the current line
                         processedLines.push(line + ` <button class="pronunciation-button" data-text-to-speak="${swedishWord}" aria-label="Play pronunciation for ${swedishWord}"><span class="material-icons">volume_up</span></button>`);
                         i += 2; // Skip both current and pronunciation link line

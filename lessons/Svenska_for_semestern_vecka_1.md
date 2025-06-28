@@ -1,4 +1,4 @@
-### **Svenska för Semestern: Vecka 1 (New Link Format)**
+### **Svenska för Semestern: Vecka 1 **
 
 **(Swedish for Vacation: Week 1\)**
 
