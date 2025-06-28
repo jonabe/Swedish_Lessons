@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Parser</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #output { background: #f5f5f5; padding: 20px; margin: 20px 0; }
+        #debug { background: #e0e0e0; padding: 10px; white-space: pre-wrap; font-family: monospace; }
+        code { background: #f0f0f0; padding: 2px 4px; }
+        .pronunciation-button {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            padding: 0 5px;
+            display: inline-flex;
+            align-items: center;
+            margin-left: 5px;
+        }
+        .pronunciation-button:hover { color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Markdown Parser Test</h1>
+    
+    <h2>Input Markdown:</h2>
+    <textarea id="input" rows="10" cols="80">* **Hello / Hi:** `Hej`  
+  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Hello&op=translate`  
+* **Goodbye:** `Hej då`  
+  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Goodbye&op=translate`</textarea>
+    
+    <button onclick="testParser()">Test Parser</button>
+    
+    <h2>Output:</h2>
+    <div id="output"></div>
+    
+    <h2>Debug Info:</h2>
+    <div id="debug"></div>
+    
+    <script>
+        function testParser() {
+            const input = document.getElementById('input').value;
+            const output = document.getElementById('output');
+            const debug = document.getElementById('debug');
+            
+            let htmlContent = input;
+            const debugInfo = [];
+            
+            debugInfo.push('=== ORIGINAL INPUT ===');
+            debugInfo.push(htmlContent);
+            
+            // Step 1: Process pronunciation links BEFORE markdown
+            const lines = htmlContent.split('\n');
+            const processedLines = [];
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const pronunciationMatch = line.match(/^\s*\*\s*Pronunciation Link:\s*`(https:\/\/translate\.google\.com\/[^`]+)`/);
+                
+                if (pronunciationMatch && i > 0) {
+                    const prevLine = lines[i - 1];
+                    const swedishMatch = prevLine.match(/^\s*\*\s*.*?:\s*`([^`]+)`/);
+                    
+                    if (swedishMatch) {
+                        const swedishWord = swedishMatch[1];
+                        processedLines[processedLines.length - 1] = prevLine + ` <!--PRONUNCIATION_BUTTON:${swedishWord}-->`;
+                        debugInfo.push(`\nFound pronunciation for: ${swedishWord}`);
+                        continue;
+                    }
+                }
+                processedLines.push(line);
+            }
+            
+            htmlContent = processedLines.join('\n');
+            
+            debugInfo.push('\n=== AFTER PRONUNCIATION PROCESSING ===');
+            debugInfo.push(htmlContent);
+            
+            // Step 2: Markdown processing
+            htmlContent = htmlContent.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            htmlContent = htmlContent.replace(/`(.*?)`/g, '<code>$1</code>');
+            htmlContent = htmlContent.replace(/^(\s*)\*\s*(.*$)/gm, '$1<li>$2</li>');
+            htmlContent = htmlContent.replace(/((?:\s*<li>.*?<\/li>\s*)+)/gs, '<ul>$1</ul>');
+            
+            debugInfo.push('\n=== AFTER MARKDOWN ===');
+            debugInfo.push(htmlContent);
+            
+            // Step 3: Replace pronunciation placeholders
+            htmlContent = htmlContent.replace(/<!--PRONUNCIATION_BUTTON:([^-]+)-->/g, (match, swedishWord) => {
+                debugInfo.push(`\nReplacing button for: ${swedishWord}`);
+                return ` <button class="pronunciation-button" data-text-to-speak="${swedishWord}"><span class="material-icons">volume_up</span></button>`;
+            });
+            
+            debugInfo.push('\n=== FINAL HTML ===');
+            debugInfo.push(htmlContent);
+            
+            output.innerHTML = htmlContent;
+            debug.textContent = debugInfo.join('\n');
+            
+            // Add click handlers
+            output.querySelectorAll('.pronunciation-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const text = button.dataset.textToSpeak;
+                    if ('speechSynthesis' in window) {
+                        const utterance = new SpeechSynthesisUtterance(text);
+                        utterance.lang = 'sv-SE';
+                        speechSynthesis.speak(utterance);
+                    }
+                });
+            });
+        }
+        
+        // Run test on load
+        window.addEventListener('DOMContentLoaded', testParser);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+I want to build a webapp where user can practice lessons, 
+
+we have one lesson document per week 
+this format
+https://docs.google.com/document/d/1LsjrXQZPKZogamAri-PrmeK84PXAdQbpvKBk0YNRbpo/edit?usp=sharing
+
+sample content
+---
+Dag 1: Lördag, 28 Juni (Day 1: Saturday, June 28)
+Today's Goal: Learn how to say hello and goodbye in a few different ways.
+Part A: New Vocabulary
+Hello / Hi: Hej
+Pronunciation Link: https://translate.google.com/?sl=en&tl=sv&text=Hello&op=translate 
+Goodbye: Hej då
+Pronunciation Link: https://translate.google.com/?sl=en&tl=sv&text=Goodbye&op=translate 
+
+---
+menu
+we need a menu where you can access the document for each week (weeks can be hidden)
+
+display document
+the document should be displayed fully or at least covering most of the screen,
+clicking a translate line (https://translate.google.com/?sl=en&tl=sv&text=Goodbye&op=translate ) i'm not so much interested in the translation , more 
+
+parse links to google translate
+also the links comes as plain text like this :
+Pronunciation Link: https://translate.google.com/?sl=en&tl=sv&text=Hello&op=translate 
+so it would be good to parse this and replace it before display to user as
+Pronunciation
+where Pronunciation is converted to a link or even better just a speaker button 
+
+play translation (without even showing google translate would be best)
+we already have the translation so the primary use is just to listen to the Pronunciation , maybe think of a solution if this translation can be played 
+without even showing google translate , 
+ could use this button somehow directly without showing , just playing the translation 
+<span data-is-tooltip-wrapper="true"><button class="VfPpkd-Bz112c-LgbsSe VfPpkd-Bz112c-LgbsSe-OWXEXe-e5LLRc-SxQuSe fzRBVc tmJved mN1ivc rrPCWc" jscontroller="xzbRj" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;" data-idom-class="fzRBVc tmJved mN1ivc rrPCWc" jsname="UsVyAb" aria-label="Listen to translation" data-tooltip-enabled="true" data-tooltip-id="ucc-2" data-tooltip-label-on="Stop" data-tooltip-label-off="Listen" lang="" data-aria-label-on="Stop listening" data-aria-label-off="Listen to translation"><div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div><div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div><span aria-hidden="true" class="material-icons-extended VfPpkd-Bz112c-kBDsod-OWXEXe-IT5dJd VfPpkd-Bz112c-kBDsod"><span class="notranslate VfPpkd-kBDsod" aria-hidden="true"><svg enable-background="new 0 0 24 24" focusable="false" height="20" viewBox="0 0 24 24" width="20" class=" NMm5M"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M6,6h12v12H6V6z"></path></g></g></svg></span></span><span aria-hidden="true" class="material-icons-extended VfPpkd-Bz112c-kBDsod"><svg focusable="false" width="20" height="20" viewBox="0 0 24 24" class=" NMm5M"><path d="M3 9v6h4l5 5V4L7 9H3zm7-.17v6.34L7.83 13H5v-2h2.83L10 8.83zM16.5 12A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z"></path><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z"></path></svg></span><div class="VfPpkd-Bz112c-RLmnJb"></div></button><div class="EY8ABd-OWXEXe-TAWMXe" role="tooltip" aria-hidden="true" id="ucc-2">Listen</div></span>
+
+if not 
+clicking a Pronunciation link opens translate.google.com in a iframe or div to the  bottom   (maybe split screen and let bottom third show up as an iframe)
+
+
+
+the solution could be just js or use python too if needed. 
+i want to host this on amazon aws lightsail. could be public use. 
+
+create a prototype for week 1 with deploy script and instructions 
+
