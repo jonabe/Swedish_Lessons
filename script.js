@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     
     // iOS detection
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    //const isIOS = true; // Force iOS mode for development
+    //const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isIOS = true; // Force iOS mode for development
     if (isIOS) {
-        //document.body.classList.add('ios-device');
+        document.body.classList.add('ios-device');
     }
     async function loadLesson(weekNumber) {
         try {
@@ -63,9 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = document.getElementById(day.anchorId);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Hide sidebar on mobile/iOS after click
-                    const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                    if (window.innerWidth <= 768 || isIOSDevice) {
+                    // Hide sidebar on small screens or when in iOS mode
+                    if (window.innerWidth <= 768 || isIOS) {
                         sidebar.classList.add('hidden');
                     }
                 }
@@ -266,12 +265,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const textToSpeak = button.dataset.textToSpeak;
                 const googleUrl = button.dataset.googleUrl;
                 
-                // Check if we're on iOS
-                const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                
-                if (isIOSDevice && googleUrl) {
+                // Use the global isIOS variable
+                if (isIOS && googleUrl) {
                     // On iOS, open Google Translate in a popup window
-                    openTranslatePopup(googleUrl);
+                    window.open(googleUrl, '_blank');
                 } else if (textToSpeak) {
                     // On other devices, use Web Speech API
                     if ('speechSynthesis' in window) {

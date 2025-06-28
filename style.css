@@ -101,6 +101,11 @@ body {
     padding-top: 100px;
 }
 
+/* Fix hidden state for iOS devices */
+.ios-device .sidebar.hidden {
+    transform: translateX(-100vw) !important;
+}
+
 .ios-device .sidebar ul li a.has-submenu::after {
     color: #fff !important;
     background: transparent !important;
