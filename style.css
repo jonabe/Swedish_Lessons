@@ -19,7 +19,7 @@ body {
 
 .hamburger-menu {
     position: fixed; /* Changed to fixed so it stays in place */
-    top: 15px;
+    top: 10px; /* Moved up from 15px */
     left: 15px;
     background: none;
     border: none;
@@ -50,11 +50,24 @@ body {
     }
 }
 
+/* iOS class-based styling for development */
+.ios-device .hamburger-menu,
+.ios-device .hamburger-menu.dark {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #333 !important;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sidebar {
     width: 250px;
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 60px 20px 20px 20px; /* Increased top padding from 20px to 60px */
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease-in-out, margin-left 0.3s ease-in-out;
     position: relative;
@@ -325,7 +338,7 @@ body {
 @supports (-webkit-touch-callout: none) {
     .sidebar {
         width: 100vw !important;
-        padding: 20px 30px;
+        padding: 60px 30px 20px 30px; /* Match increased top padding */
     }
     
     .sidebar.hidden {

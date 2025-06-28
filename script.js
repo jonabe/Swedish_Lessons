@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     
     // iOS detection
-    const isIOS = true; // Force iOS mode for development
-    //const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
+    //const isIOS = true; // Force iOS mode for development
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (isIOS) {
+        document.body.classList.add('ios-device');
+    }
     async function loadLesson(weekNumber) {
         try {
             const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
