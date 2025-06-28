@@ -10,11 +10,10 @@ body {
     display: flex;
     min-height: 100vh;
     position: relative; /* For positioning the hamburger button */
-    transition: margin-left 0.3s ease-in-out;
 }
 
-.container.sidebar-hidden {
-    margin-left: 0;
+.container.sidebar-hidden .content {
+    margin-left: 20px; /* Reset margin when sidebar is hidden */
 }
 
 .hamburger-menu {
@@ -26,7 +25,7 @@ body {
     font-size: 2em;
     color: #333; /* Always dark */
     cursor: pointer;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 2000; /* Increased to ensure it's always on top */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,6 +33,7 @@ body {
     height: 50px;
     border-radius: 50%;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add subtle shadow for visibility */
 }
 
 .hamburger-menu:hover {
@@ -44,6 +44,7 @@ body {
 @supports (-webkit-touch-callout: none) {
     .hamburger-menu,
     .hamburger-menu.dark {
+        position: fixed !important;
         background: rgba(255, 255, 255, 0.9) !important;
         color: #333 !important;
         border-radius: 50%;
@@ -52,12 +53,14 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 2000 !important;
     }
 }
 
 /* iOS class-based styling for development */
 .ios-device .hamburger-menu,
 .ios-device .hamburger-menu.dark {
+    position: fixed !important;
     background: rgba(255, 255, 255, 0.9) !important;
     color: #333 !important;
     border-radius: 50%;
@@ -66,14 +69,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2000 !important;
 }
 
 .ios-device .sidebar::before {
     height: 90px !important;
 }
 
+.ios-device .sidebar {
+    width: 100vw !important;
+    width: 100% !important;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: 100vh !important;
+    height: 100% !important;
+    margin: 0 !important;
+    overflow-y: auto !important;
+}
+
 .ios-device .sidebar h1 {
     padding-top: 100px;
+}
+
+.ios-device .sidebar ul li a.has-submenu::after {
+    color: #fff !important;
+    background: transparent !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: #fff !important;
+    -webkit-appearance: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .sidebar {
@@ -83,9 +110,14 @@ body {
     padding: 0;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease-in-out, margin-left 0.3s ease-in-out;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
     z-index: 100;
     flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 /* Top bar area in sidebar */
@@ -103,7 +135,7 @@ body {
 }
 
 .sidebar.hidden {
-    margin-left: -250px; /* Just the width, since padding is now 0 */
+    transform: translateX(-250px); /* Use transform instead of margin for fixed position */
 }
 
 .sidebar h1 {
@@ -158,6 +190,13 @@ body {
     transform: translateY(-50%);
     transition: transform 0.3s ease;
     font-size: 0.8em;
+    color: #fff;
+    background: none;
+    text-shadow: none;
+    -webkit-text-fill-color: #fff;
+    -webkit-appearance: none;
+    border: none;
+    box-shadow: none;
 }
 
 .sidebar ul li a.has-submenu.expanded::after {
@@ -250,6 +289,7 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin: 20px;
+    margin-left: 270px; /* Account for fixed sidebar width */
     border-radius: 8px;
     overflow-y: auto; /* Enable scrolling for long content */
 }
@@ -416,6 +456,12 @@ body {
 @supports (-webkit-touch-callout: none) {
     .sidebar {
         width: 100vw !important;
+        width: 100% !important;
+        right: 0 !important;
+        left: 0 !important;
+        position: fixed !important;
+        margin: 0 !important;
+        max-width: none !important;
     }
     
     .sidebar::before {
@@ -445,10 +491,17 @@ body {
     
     /* Fix arrow appearance on iOS */
     .sidebar ul li a.has-submenu::after {
-        color: #fff;
+        color: #fff !important;
         opacity: 1;
         -webkit-text-stroke: 0;
-        text-shadow: none;
+        text-shadow: none !important;
+        background: none !important;
+        -webkit-text-fill-color: #fff !important;
+        -webkit-appearance: none !important;
+        text-decoration: none !important;
+        font-style: normal !important;
+        border: none !important;
+        box-shadow: none !important;
     }
 }
 
@@ -462,9 +515,13 @@ body {
         position: fixed;
         height: 100%;
         width: 100vw;
+        width: 100%;
         top: 0;
         left: 0;
+        right: 0;
         z-index: 999;
+        margin: 0;
+        max-width: none;
     }
 
     .sidebar.hidden {

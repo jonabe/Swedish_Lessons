@@ -290,7 +290,10 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadYesterdaysVocabulary() {
         try {
             const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
-            if (!response.ok) return;
+            if (!response.ok) {
+                console.error('Failed to load lesson file');
+                return;
+            }
             
             const text = await response.text();
             const lines = text.split('\n');
@@ -307,8 +310,11 @@ document.addEventListener('DOMContentLoaded', () => {
                            'July', 'August', 'September', 'October', 'November', 'December'];
             const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             
+            // Remove year to make it work across different years
             const yesterdayFormatted = `${days[yesterday.getDay()]}, ${months[yesterday.getMonth()]} ${yesterday.getDate()}`;
             const todayFormatted = `${days[today.getDay()]}, ${months[today.getMonth()]} ${today.getDate()}`;
+            
+            console.log('Looking for dates:', yesterdayFormatted, 'or', todayFormatted);
             
             // Find the section for yesterday (or today as fallback)
             let foundDate = false;
@@ -458,7 +464,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // If we found vocabulary from either date, show reminder
             if (foundDate && (partAWords.length > 0 || partBWords.length > 0)) {
+                console.log('Found vocabulary words:', partAWords.length, 'in Part A,', partBWords.length, 'in Part B');
                 showReminder(partAWords, partBWords);
+            } else {
+                console.log('No vocabulary found for yesterday or today');
+                // Try showing from first available day as fallback
+                loadFirstDayVocabulary();
             }
             
         } catch (error) {
@@ -518,12 +529,103 @@ document.addEventListener('DOMContentLoaded', () => {
             showAnswerBtn.style.display = 'none';
         };
     }
+    
+    // Function to load vocabulary from the first day as fallback
+    async function loadFirstDayVocabulary() {
+        try {
+            const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
+            if (!response.ok) return;
+            
+            const text = await response.text();
+            const lines = text.split('\n');
+            
+            let foundDay = false;
+            let inPartA = false;
+            let inPartB = false;
+            let partAWords = [];
+            let partBWords = [];
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                
+                // Find first day - match both escaped and unescaped versions
+                if (line.match(/^### \*\*Dag \d+:/) || line.includes('**Dag 1:')) {
+                    if (!foundDay) {
+                        foundDay = true;
+                        console.log('Found first day:', line);
+                    } else {
+                        // We hit another day, stop
+                        break;
+                    }
+                    continue;
+                }
+                
+                if (foundDay) {
+                    // Check for Part A
+                    if (line.includes('**Part A:')) {
+                        inPartA = true;
+                        inPartB = false;
+                        continue;
+                    }
+                    
+                    // Check for Part B
+                    if (line.includes('**Part B:')) {
+                        inPartB = true;
+                        inPartA = false;
+                        continue;
+                    }
+                    
+                    // Check for Part C (stop collecting)
+                    if (line.includes('**Part C:')) {
+                        break;
+                    }
+                    
+                    // Extract vocabulary items
+                    if ((inPartA || inPartB) && line.trim().startsWith('*')) {
+                        // First clean up escape characters
+                        let cleanLine = line;
+                        cleanLine = cleanLine.replace(/\\!/g, '!');
+                        cleanLine = cleanLine.replace(/\\'/g, "'");
+                        cleanLine = cleanLine.replace(/\\"/g, '"');
+                        
+                        // Match patterns like: * **English:** `Swedish`
+                        const match = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*`([^`]+)`/);
+                        if (match) {
+                            let english = match[1].trim();
+                            const swedish = match[2].trim();
+                            
+                            // Clean escape characters from extracted text too
+                            english = english.replace(/\\!/g, '!');
+                            english = english.replace(/\\'/g, "'");
+                            english = english.replace(/\\"/g, '"');
+                            
+                            if (inPartA) {
+                                partAWords.push({ english, swedish });
+                            } else if (inPartB) {
+                                partBWords.push({ english, swedish });
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if (partAWords.length > 0 || partBWords.length > 0) {
+                console.log('Using first day vocabulary as fallback');
+                showReminder(partAWords, partBWords);
+            }
+            
+        } catch (error) {
+            console.error('Error loading first day vocabulary:', error);
+        }
+    }
 
     // Initial load for Week 1
     loadLesson(1);
     
-    // Load yesterday's vocabulary
-    loadYesterdaysVocabulary();
+    // Load yesterday's vocabulary with a small delay to ensure DOM is ready
+    setTimeout(() => {
+        loadYesterdaysVocabulary();
+    }, 500);
     
     // On mobile/iOS, show sidebar by default
     if (window.innerWidth <= 768 || isIOS) {
