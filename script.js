@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     
     // iOS detection
-    //const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    const isIOS = true; // Force iOS mode for development
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    //const isIOS = true; // Force iOS mode for development
     if (isIOS) {
         document.body.classList.add('ios-device');
     }
@@ -191,13 +191,20 @@ document.addEventListener('DOMContentLoaded', () => {
             [/\\\*/g, '*'],  // Asterisks
             [/\\\(/g, '('],  // Opening parentheses
             [/\\\)/g, ')'],  // Closing parentheses
-            [/\\\!/g, '!'],  // Exclamation marks
+            [/\\!/g, '!'],  // Exclamation marks
             [/\\\[/g, '['],  // Opening brackets
             [/\\\]/g, ']'],  // Closing brackets
             [/\\\+/g, '+'],  // Plus signs
             [/\\=/g, '='],   // Equals signs
             [/\\>/g, '>'],   // Greater than signs
             [/\\</g, '<'],   // Less than signs
+            [/\\'/g, "'"],  // Single quotes
+            [/\\"/g, '"'],  // Double quotes
+            [/\\\?/g, '?'],  // Question marks
+            [/\\\./g, '.'],  // Periods
+            [/\\,/g, ','],   // Commas
+            [/\\;/g, ';'],   // Semicolons
+            [/\\:/g, ':'],   // Colons
         ];
         
         escapeReplacements.forEach(([pattern, replacement]) => {
@@ -279,8 +286,244 @@ document.addEventListener('DOMContentLoaded', () => {
         return dayAnchors;
     }
 
+    // Function to find yesterday's vocabulary
+    async function loadYesterdaysVocabulary() {
+        try {
+            const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
+            if (!response.ok) return;
+            
+            const text = await response.text();
+            const lines = text.split('\n');
+            
+            // Get yesterday's date
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            
+            // Get today's date as fallback
+            const today = new Date();
+            
+            // Format dates to match the markdown (e.g., "Saturday, June 28")
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                           'July', 'August', 'September', 'October', 'November', 'December'];
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            
+            const yesterdayFormatted = `${days[yesterday.getDay()]}, ${months[yesterday.getMonth()]} ${yesterday.getDate()}`;
+            const todayFormatted = `${days[today.getDay()]}, ${months[today.getMonth()]} ${today.getDate()}`;
+            
+            // Find the section for yesterday (or today as fallback)
+            let foundDate = false;
+            let dateToUse = yesterdayFormatted;
+            let inPartA = false;
+            let inPartB = false;
+            let partAWords = [];
+            let partBWords = [];
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                
+                // Check if this is yesterday's section
+                if (line.includes(yesterdayFormatted)) {
+                    foundDate = true;
+                    dateToUse = yesterdayFormatted;
+                    continue;
+                }
+                
+                // If we found the date and hit another day, stop
+                if (foundDate && line.match(/^### \*\*Dag \d+:/)) {
+                    break;
+                }
+                
+                if (foundDate) {
+                    // Check for Part A
+                    if (line.includes('**Part A:')) {
+                        inPartA = true;
+                        inPartB = false;
+                        continue;
+                    }
+                    
+                    // Check for Part B
+                    if (line.includes('**Part B:')) {
+                        inPartB = true;
+                        inPartA = false;
+                        continue;
+                    }
+                    
+                    // Check for Part C (stop collecting)
+                    if (line.includes('**Part C:')) {
+                        break;
+                    }
+                    
+                    // Extract vocabulary items
+                    if ((inPartA || inPartB) && line.trim().startsWith('*')) {
+                        // First clean up escape characters
+                        let cleanLine = line;
+                        cleanLine = cleanLine.replace(/\\!/g, '!');
+                        cleanLine = cleanLine.replace(/\\'/g, "'");
+                        cleanLine = cleanLine.replace(/\\"/g, '"');
+                        
+                        // Match patterns like: * **English:** `Swedish`
+                        const match = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*`([^`]+)`/);
+                        if (match) {
+                            let english = match[1].trim();
+                            const swedish = match[2].trim();
+                            
+                            // Clean escape characters from extracted text too
+                            english = english.replace(/\\!/g, '!');
+                            english = english.replace(/\\'/g, "'");
+                            english = english.replace(/\\"/g, '"');
+                            
+                            if (inPartA) {
+                                partAWords.push({ english, swedish });
+                            } else if (inPartB) {
+                                partBWords.push({ english, swedish });
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // If we didn't find yesterday's vocabulary, try today's
+            if (!foundDate || (partAWords.length === 0 && partBWords.length === 0)) {
+                // Reset and search for today
+                foundDate = false;
+                inPartA = false;
+                inPartB = false;
+                partAWords = [];
+                partBWords = [];
+                
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    
+                    // Check if this is today's section
+                    if (line.includes(todayFormatted)) {
+                        foundDate = true;
+                        dateToUse = todayFormatted;
+                        continue;
+                    }
+                    
+                    // If we found the date and hit another day, stop
+                    if (foundDate && line.match(/^### \*\*Dag \d+:/)) {
+                        break;
+                    }
+                    
+                    if (foundDate) {
+                        // Check for Part A
+                        if (line.includes('**Part A:')) {
+                            inPartA = true;
+                            inPartB = false;
+                            continue;
+                        }
+                        
+                        // Check for Part B
+                        if (line.includes('**Part B:')) {
+                            inPartB = true;
+                            inPartA = false;
+                            continue;
+                        }
+                        
+                        // Check for Part C (stop collecting)
+                        if (line.includes('**Part C:')) {
+                            break;
+                        }
+                        
+                        // Extract vocabulary items
+                        if ((inPartA || inPartB) && line.trim().startsWith('*')) {
+                            // First clean up escape characters
+                            let cleanLine = line;
+                            cleanLine = cleanLine.replace(/\\!/g, '!');
+                            cleanLine = cleanLine.replace(/\\'/g, "'");
+                            cleanLine = cleanLine.replace(/\\"/g, '"');
+                            
+                            // Match patterns like: * **English:** `Swedish`
+                            const match = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*`([^`]+)`/);
+                            if (match) {
+                                let english = match[1].trim();
+                                const swedish = match[2].trim();
+                                
+                                // Clean escape characters from extracted text too
+                                english = english.replace(/\\!/g, '!');
+                                english = english.replace(/\\'/g, "'");
+                                english = english.replace(/\\"/g, '"');
+                                
+                                if (inPartA) {
+                                    partAWords.push({ english, swedish });
+                                } else if (inPartB) {
+                                    partBWords.push({ english, swedish });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // If we found vocabulary from either date, show reminder
+            if (foundDate && (partAWords.length > 0 || partBWords.length > 0)) {
+                showReminder(partAWords, partBWords);
+            }
+            
+        } catch (error) {
+            console.error('Error loading yesterday\'s vocabulary:', error);
+        }
+    }
+    
+    // Function to show reminder
+    let reminderInterval = null;
+    let currentWords = [];
+    
+    function showReminder(partAWords, partBWords) {
+        const reminderSection = document.getElementById('reminder-section');
+        const reminderHeading = reminderSection.querySelector('h3');
+        
+        // Store words for timer
+        currentWords = [...partAWords, ...partBWords];
+        if (currentWords.length === 0) return;
+        
+        // Always show "Do you remember?"
+        reminderHeading.textContent = "Do you remember?";
+        
+        // Show the section
+        reminderSection.style.display = 'block';
+        
+        // Display initial word
+        displayRandomWord();
+        
+        // Clear any existing interval
+        if (reminderInterval) {
+            clearInterval(reminderInterval);
+        }
+        
+        // Set up interval to change word every minute
+        reminderInterval = setInterval(displayRandomWord, 60000); // 60000ms = 1 minute
+    }
+    
+    function displayRandomWord() {
+        const reminderText = document.getElementById('reminder-text');
+        const answerText = document.getElementById('answer-text');
+        const showAnswerBtn = document.getElementById('show-answer');
+        
+        if (currentWords.length === 0) return;
+        
+        const randomWord = currentWords[Math.floor(Math.random() * currentWords.length)];
+        
+        reminderText.textContent = `"${randomWord.english}"`;
+        answerText.textContent = randomWord.swedish;
+        
+        // Reset answer visibility
+        answerText.style.display = 'none';
+        showAnswerBtn.style.display = 'inline-block';
+        
+        // Show answer button functionality
+        showAnswerBtn.onclick = () => {
+            answerText.style.display = 'block';
+            showAnswerBtn.style.display = 'none';
+        };
+    }
+
     // Initial load for Week 1
     loadLesson(1);
+    
+    // Load yesterday's vocabulary
+    loadYesterdaysVocabulary();
     
     // On mobile/iOS, show sidebar by default
     if (window.innerWidth <= 768 || isIOS) {

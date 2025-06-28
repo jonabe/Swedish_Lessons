@@ -4,6 +4,7 @@
 
 **Theme:** The Absolute Basics & Greetings (Grunderna & Hälsningar) **Duration:** Saturday, June 28th \- Sunday, July 6th
 
+
 ---
 
 ### **Dag 1: Lördag, 28 Juni (Day 1: Saturday, June 28\)**

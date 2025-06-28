@@ -118,7 +118,7 @@ body {
 }
 
 .sidebar nav {
-    padding: 0 20px 20px 20px;
+    padding: 20px 20px 20px 20px; /* Added top padding to clear hamburger */
 }
 
 .sidebar ul {
@@ -192,6 +192,56 @@ body {
 .day-submenu li a:hover {
     background-color: #444;
     color: #fff;
+}
+
+/* Reminder section styles */
+.reminder-section {
+    margin: 30px 20px;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.reminder-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.reminder-section p {
+    color: #ccc;
+    margin: 10px 0;
+    font-size: 0.95em;
+}
+
+#reminder-text {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#answer-text {
+    color: #4CAF50;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.show-answer-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.show-answer-btn:hover {
+    background-color: #333;
 }
 
 .content {
@@ -381,6 +431,11 @@ body {
     .sidebar nav {
         padding-left: 30px;
         padding-right: 30px;
+    }
+    
+    .reminder-section {
+        margin-left: 30px;
+        margin-right: 30px;
     }
     
     .sidebar.hidden {
