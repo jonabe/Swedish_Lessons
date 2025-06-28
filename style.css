@@ -16,6 +16,14 @@ body {
     margin-left: 20px; /* Reset margin when sidebar is hidden */
 }
 
+/* On mobile, ensure content has proper margins when sidebar is hidden */
+@media (max-width: 768px) {
+    .container.sidebar-hidden .content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
 .hamburger-menu {
     position: fixed; /* Changed to fixed so it stays in place */
     top: 10px; /* Moved up from 15px */
@@ -101,6 +109,17 @@ body {
     -webkit-appearance: none !important;
     border: none !important;
     box-shadow: none !important;
+}
+
+/* Ensure proper content margins on iOS */
+.ios-device .content {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+
+.ios-device .container.sidebar-hidden .content {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
 }
 
 .sidebar {
@@ -240,6 +259,8 @@ body {
     background-color: #444;
     border-radius: 8px;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .reminder-section h3 {
@@ -292,6 +313,7 @@ body {
     margin-left: 270px; /* Account for fixed sidebar width */
     border-radius: 8px;
     overflow-y: auto; /* Enable scrolling for long content */
+    box-sizing: border-box;
 }
 
 #lesson-display {
@@ -530,9 +552,11 @@ body {
 
     .content {
         margin-top: 60px; /* Make space for the hamburger menu */
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: auto;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .hamburger-menu {
