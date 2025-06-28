@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // iOS detection
     const isIOS = true; // Force iOS mode for development
-    // const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    //const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     async function loadLesson(weekNumber) {
         try {
@@ -283,7 +283,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // On mobile/iOS, show sidebar by default
     if (window.innerWidth <= 768 || isIOS) {
         sidebar.classList.remove('hidden');
-        hamburgerMenu.classList.remove('dark');
+        if (!isIOS) {
+            hamburgerMenu.classList.remove('dark');
+        }
     }
 
     // Note: Week 1 click handler is now managed in updateDaySubmenu function
@@ -291,7 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle sidebar visibility on hamburger menu click
     hamburgerMenu.addEventListener('click', () => {
         sidebar.classList.toggle('hidden');
-        hamburgerMenu.classList.toggle('dark');
+        // Only toggle dark class on non-iOS devices
+        if (!isIOS) {
+            hamburgerMenu.classList.toggle('dark');
+        }
         document.querySelector('.container').classList.toggle('sidebar-hidden');
     });
     
