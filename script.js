@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const week1Link = document.getElementById('week1-link');
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const sidebar = document.querySelector('.sidebar');
+    
+    // iOS detection
+    const isIOS = true; // Force iOS mode for development
+    // const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     async function loadLesson(weekNumber) {
         try {
@@ -159,8 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     
                     if (swedishWord) {
-                        // Add the button placeholder to the current line
-                        processedLines.push(line + ` <button class="pronunciation-button" data-text-to-speak="${swedishWord}" aria-label="Play pronunciation for ${swedishWord}"><span class="material-icons">volume_up</span></button>`);
+                        // Extract the Google Translate URL
+                        const urlMatch = nextLine.match(/`(https:\/\/translate\.google\.com\/[^`]+)`/);
+                        const googleUrl = urlMatch ? urlMatch[1] : `https://translate.google.com/?sl=en&tl=sv&text=${encodeURIComponent(swedishWord)}&op=translate`;
+                        
+                        // Add the button placeholder to the current line with both text and URL
+                        processedLines.push(line + ` <button class="pronunciation-button" data-text-to-speak="${swedishWord}" data-google-url="${googleUrl}" aria-label="Play pronunciation for ${swedishWord}"><span class="material-icons">volume_up</span></button>`);
                         i += 2; // Skip both current and pronunciation link line
                         continue;
                     }
@@ -246,7 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
         lessonDisplay.querySelectorAll('.pronunciation-button').forEach(button => {
             button.addEventListener('click', () => {
                 const textToSpeak = button.dataset.textToSpeak;
-                if (textToSpeak) {
+                const googleUrl = button.dataset.googleUrl;
+                
+                if (isIOS && googleUrl) {
+                    // On iOS, open Google Translate in a popup window
+                    openTranslatePopup(googleUrl);
+                } else if (textToSpeak) {
+                    // On other devices, use Web Speech API
                     if ('speechSynthesis' in window) {
                         const utterance = new SpeechSynthesisUtterance(textToSpeak);
                         utterance.lang = 'sv-SE'; // Set language to Swedish
@@ -265,6 +279,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial load for Week 1
     loadLesson(1);
+    
+    // On mobile/iOS, show sidebar by default
+    if (window.innerWidth <= 768 || isIOS) {
+        sidebar.classList.remove('hidden');
+        hamburgerMenu.classList.remove('dark');
+    }
 
     // Note: Week 1 click handler is now managed in updateDaySubmenu function
 
@@ -273,5 +293,41 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.toggle('hidden');
         hamburgerMenu.classList.toggle('dark');
         document.querySelector('.container').classList.toggle('sidebar-hidden');
+    });
+    
+    // Popup functionality for Google Translate
+    function openTranslatePopup(url) {
+        // Open in a small popup window
+        const width = 600;
+        const height = 500; // Increased by 100px
+        const left = (window.screen.width - width) / 2;
+        const top = (window.screen.height - height) / 2;
+        
+        window.open(
+            url,
+            'GoogleTranslate',
+            `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+        );
+    }
+    
+    // Scroll to top functionality
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    const scrollThreshold = window.innerHeight; // One page height
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > scrollThreshold) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Scroll to top when button is clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
