@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     //const isIOS = true; // Force iOS mode for development
     if (isIOS) {
-        document.body.classList.add('ios-device');
+        //document.body.classList.add('ios-device');
     }
     async function loadLesson(weekNumber) {
         try {
@@ -63,8 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = document.getElementById(day.anchorId);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Hide sidebar on mobile after click
-                    if (window.innerWidth <= 768) {
+                    // Hide sidebar on mobile/iOS after click
+                    const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                    if (window.innerWidth <= 768 || isIOSDevice) {
                         sidebar.classList.add('hidden');
                     }
                 }
@@ -265,7 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const textToSpeak = button.dataset.textToSpeak;
                 const googleUrl = button.dataset.googleUrl;
                 
-                if (isIOS && googleUrl) {
+                // Check if we're on iOS
+                const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                
+                if (isIOSDevice && googleUrl) {
                     // On iOS, open Google Translate in a popup window
                     openTranslatePopup(googleUrl);
                 } else if (textToSpeak) {
