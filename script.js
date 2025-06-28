@@ -11,15 +11,91 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const text = await response.text();
-            displayLesson(text);
+            const dayAnchors = displayLesson(text);
+            
+            // Create submenu for days
+            if (dayAnchors && dayAnchors.length > 0) {
+                updateDaySubmenu(weekNumber, dayAnchors);
+            }
         } catch (error) {
             console.error('Error loading lesson:', error);
             lessonDisplay.innerHTML = `<p>Failed to load lesson for Week ${weekNumber}. Please try again later.</p>`;
         }
     }
+    
+    function updateDaySubmenu(weekNumber, dayAnchors) {
+        // Find or create submenu container
+        const week1Link = document.getElementById('week1-link');
+        const weekLi = week1Link.parentElement;
+        
+        // Check if submenu already exists
+        const existingSubmenu = weekLi.querySelector('.day-submenu');
+        if (existingSubmenu) {
+            // Submenu already exists, don't recreate it
+            return;
+        }
+        
+        // Add expand/collapse functionality to week link
+        week1Link.classList.add('has-submenu');
+        week1Link.classList.add('collapsed'); // Start collapsed
+        
+        // Create new submenu
+        const submenu = document.createElement('ul');
+        submenu.className = 'day-submenu';
+        submenu.style.display = 'none'; // Hidden by default
+        
+        dayAnchors.forEach(day => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${day.anchorId}`;
+            a.textContent = `Day ${day.number}`;
+            a.title = day.englishDate;
+            
+            // Add click handler for smooth scrolling
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById(day.anchorId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Hide sidebar on mobile after click
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.add('hidden');
+                    }
+                }
+            });
+            
+            li.appendChild(a);
+            submenu.appendChild(li);
+        });
+        
+        weekLi.appendChild(submenu);
+        
+        // Remove any existing click handlers first
+        const newWeek1Link = week1Link.cloneNode(true);
+        week1Link.parentNode.replaceChild(newWeek1Link, week1Link);
+        
+        // Add toggle functionality to week link
+        newWeek1Link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isCollapsed = newWeek1Link.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                newWeek1Link.classList.remove('collapsed');
+                newWeek1Link.classList.add('expanded');
+                submenu.style.display = 'block';
+            } else {
+                newWeek1Link.classList.remove('expanded');
+                newWeek1Link.classList.add('collapsed');
+                submenu.style.display = 'none';
+            }
+            
+            // Don't reload the lesson, just toggle the menu
+        });
+    }
 
     function displayLesson(markdownContent) {
         let htmlContent = markdownContent;
+        const dayAnchors = []; // Store day information for submenu
 
         // Process pronunciation links before markdown conversion
         // The structure is:
@@ -32,6 +108,28 @@ document.addEventListener('DOMContentLoaded', () => {
         
         while (i < lines.length) {
             const line = lines[i];
+            
+            // Check for day headings and add anchors
+            const dayMatch = line.match(/^### \*\*Dag (\d+): (.+?) \(Day \d+: (.+?)\\\)\*\*$/);
+            if (dayMatch) {
+                const dayNumber = dayMatch[1];
+                const swedishDate = dayMatch[2];
+                const englishDate = dayMatch[3];
+                const anchorId = `day${dayNumber}`;
+                
+                // Store day info for submenu
+                dayAnchors.push({
+                    number: dayNumber,
+                    swedishDate: swedishDate,
+                    englishDate: englishDate,
+                    anchorId: anchorId
+                });
+                
+                // Add anchor to the heading
+                processedLines.push(`### <span id="${anchorId}"></span>**Dag ${dayNumber}: ${swedishDate} (Day ${dayNumber}: ${englishDate}\\)**`);
+                i++;
+                continue;
+            }
             
             // Check if next line is a pronunciation link
             if (i + 1 < lines.length) {
@@ -56,6 +154,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         htmlContent = processedLines.join('\n');
+        
+        // Fix escaped characters before markdown conversion
+        // This handles common markdown escapes that shouldn't be escaped in our context
+        const escapeReplacements = [
+            [/\\_/g, '_'],   // Underscores
+            [/\\-/g, '-'],   // Hyphens/dashes
+            [/\\\*/g, '*'],  // Asterisks
+            [/\\\(/g, '('],  // Opening parentheses
+            [/\\\)/g, ')'],  // Closing parentheses
+            [/\\\!/g, '!'],  // Exclamation marks
+            [/\\\[/g, '['],  // Opening brackets
+            [/\\\]/g, ']'],  // Closing brackets
+            [/\\\+/g, '+'],  // Plus signs
+            [/\\=/g, '='],   // Equals signs
+            [/\\>/g, '>'],   // Greater than signs
+            [/\\</g, '<'],   // Less than signs
+        ];
+        
+        escapeReplacements.forEach(([pattern, replacement]) => {
+            htmlContent = htmlContent.replace(pattern, replacement);
+        });
 
         // Markdown to HTML Conversion
         // Process block-level elements first
@@ -121,26 +240,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+        
+        // Return day anchors for submenu creation
+        return dayAnchors;
     }
 
     // Initial load for Week 1
     loadLesson(1);
 
-    // Event listener for Week 1 link (if more weeks are added, this can be generalized)
-    week1Link.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Remove active class from all links and add to current
-        document.querySelectorAll('.sidebar ul li a').forEach(link => link.classList.remove('active'));
-        week1Link.classList.add('active');
-        loadLesson(1);
-        // Hide sidebar on link click for mobile
-        if (window.innerWidth <= 768) {
-            sidebar.classList.add('hidden');
-        }
-    });
+    // Note: Week 1 click handler is now managed in updateDaySubmenu function
 
     // Toggle sidebar visibility on hamburger menu click
     hamburgerMenu.addEventListener('click', () => {
         sidebar.classList.toggle('hidden');
+        hamburgerMenu.classList.toggle('dark');
+        document.querySelector('.container').classList.toggle('sidebar-hidden');
     });
 });
