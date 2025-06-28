@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     
     // iOS detection
-    //const isIOS = true; // Force iOS mode for development
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    //const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isIOS = true; // Force iOS mode for development
     if (isIOS) {
         document.body.classList.add('ios-device');
     }
@@ -285,9 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // On mobile/iOS, show sidebar by default
     if (window.innerWidth <= 768 || isIOS) {
         sidebar.classList.remove('hidden');
-        if (!isIOS) {
-            hamburgerMenu.classList.remove('dark');
-        }
     }
 
     // Note: Week 1 click handler is now managed in updateDaySubmenu function
@@ -295,10 +292,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle sidebar visibility on hamburger menu click
     hamburgerMenu.addEventListener('click', () => {
         sidebar.classList.toggle('hidden');
-        // Only toggle dark class on non-iOS devices
-        if (!isIOS) {
-            hamburgerMenu.classList.toggle('dark');
-        }
         document.querySelector('.container').classList.toggle('sidebar-hidden');
     });
     
