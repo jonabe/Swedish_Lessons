@@ -1,366 +1,493 @@
-### **Svenska för Semestern: Vecka 1 **
+# **Svenska för Semestern: Vecka 1 (Intensive)**
 
 **(Swedish for Vacation: Week 1\)**
 
-**Theme:** The Absolute Basics & Greetings (Grunderna & Hälsningar) **Duration:** Saturday, June 28th \- Sunday, July 6th
+Theme: The Absolute Basics & Greetings (Grunderna & Hälsningar)
 
+Duration: Saturday, June 28th \- Sunday, July 6th
 
----
+### **Dag 1: Lördag, 2025-06-28**
 
-### **Dag 1: Lördag, 28 Juni (Day 1: Saturday, June 28\)**
+**Today's Goal:** Learn essential greetings and polite words for any situation.
 
-**Today's Goal:** Learn how to say hello and goodbye in a few different ways.
+**Part A: New Vocabulary (9 words)**
 
-**Part A: New Vocabulary**
+* **Hello / Hi:** Hej  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Hello\&op=translate  
+* **Goodbye:** Hej då  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Goodbye\&op=translate  
+* **Good morning:** God morgon  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Good%20morning\&op=translate  
+* **See you later:** Vi ses\!  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=See%20you%20later\&op=translate  
+* **Yes:** Ja  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Yes\&op=translate  
+* **No:** Nej  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=No\&op=translate  
+* **Thanks:** Tack  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Thanks\&op=translate  
+* **Thank you very much:** Tack så mycket  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Thank%20you%20very%20much\&op=translate  
+* **You're welcome / Here you go:** Varsågod  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=You%27re%20welcome\&op=translate
 
-* **Hello / Hi:** `Hej`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Hello&op=translate`  
-* **Goodbye:** `Hej då`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Goodbye&op=translate`  
-* **Good morning:** `God morgon`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Good%20morning&op=translate`  
-* **Good evening:** `God kväll`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Good%20evening&op=translate`  
-* **See you later:** `Vi ses!`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=See%20you%20later&op=translate`
+**Part B: New Phrases (4 phrases)**
 
-**Part B: New Phrases**
+* **Hello, good morning\!:** Hej, god morgon\!  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Hello%2C%20good%20morning\&op=translate  
+* **Yes, thanks:** Ja, tack  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Yes%2C%20thanks\&op=translate  
+* **No, thanks:** Nej, tack  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=No%2C%20thanks\&op=translate  
+* **Goodbye, see you later\!:** Hej då, vi ses\!  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Goodbye%2C%20see%20you%20later\&op=translate
 
-* **Hello, good morning\!:** `Hej, god morgon!`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Hello%2C%20good%20morning&op=translate`  
-* **Goodbye, see you later\!:** `Hej då, vi ses!`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Goodbye%2C%20see%20you%20later&op=translate`
+**Part C: Activity / Reinforcement**
 
-**Part C: Activity** Match the Swedish greeting to the time of day.
-
-1. God morgon  
-2. God kväll  
-3. Hej då
-
-A. When you are leaving. B. In the morning. C. In the evening.
-
-**Part D: "Extra Reps"**
-
-* **Cultural Tip:** "Hej" is the most common greeting in Sweden. You can use it for anyone at any time of day. When leaving, you might also hear "Hej hej\!" which is a friendly, informal way to say goodbye.
-
----
-
-### **Dag 2: Söndag, 29 Juni (Day 2: Sunday, June 29\)**
-
-**Today's Goal:** Learn the essential polite words.
-
-**Part A: New Vocabulary**
-
-* **Yes:** `Ja`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Yes&op=translate`  
-* **No:** `Nej`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=No&op=translate`  
-* **Thanks:** `Tack`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Thanks&op=translate`  
-* **Thank you very much:** `Tack så mycket`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Thank%20you%20very%20much&op=translate`  
-* **You're welcome / Here you go:** `Varsågod`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=You%27re%20welcome&op=translate`
-
-**Part B: New Phrases**
-
-* **Yes, thanks:** `Ja, tack`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Yes%2C%20thanks&op=translate`  
-* **No, thanks:** `Nej, tack`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=No%2C%20thanks&op=translate`  
-* **Thanks, you too\! / Thanks, the same to you\!:** `Tack, detsamma!`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Thanks%2C%20the%20same%20to%20you&op=translate`
-
-**Part C: Activity** How would you respond in Swedish?
-
-1. Someone offers you a cinnamon bun that you want. You say: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.  
-2. Someone gives you a gift. You say: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.  
-3. You hand a drawing to your *farmor*. You say: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
+* **Activity 1: Dialogue Fill-in**  
+  1. Person A: "Vill du ha en bulle?" (Do you want a bun?) You want one. You say: \_\_\_\_\_\_\_\_\_\_\_\_\_\_.  
+  2. Person B gives you the bun. You say: \_\_\_\_\_\_\_\_\_\_\_\_\_\_.  
+  3. Person B says "Varsågod". You are leaving. You say: \_\_\_\_\_\_\_\_\_\_\_\_\_\_.  
+* **Activity 2: Translate to Swedish**  
+  1. Good morning\! \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.  
+  2. No, thank you very much. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_.
 
 **Part D: "Extra Reps"**
 
-* **Cultural Tip:** The word **Varsågod** is a powerhouse. It means "You're welcome" after someone says "Tack", but it also means "Here you go" anytime you give something to someone. You'll hear and use it a lot.
+* **Cultural Tip:** Hej is universal. You can say it when you walk into a store, to the bus driver, to friends, to strangers. It's always correct. Hej hej is a very common and friendly way to say goodbye.
 
----
+**Part E: Advanced / Challenge Section**
 
-### **Dag 3: Måndag, 30 Juni (Day 3: Monday, June 30\)**
+* **Challenge:** Learn Tack, detsamma\! which means "Thanks, the same to you\!". How would you use it in this dialogue?  
+  * Person A: "Ha en bra dag\!" (Have a good day\!)  
+  * You: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Today's Goal:** Learn how to introduce yourself.
+### **Dag 2: Söndag, 2025-06-29**
 
-**Part A: New Vocabulary**
+**Today's Goal:** Learn to ask for names (yours, his, and hers).
 
-* **I / Me:** `Jag`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I&op=translate`  
-* **You:** `Du`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=You&op=translate`  
-* **What:** `Vad`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=What&op=translate`  
-* **is called / is named:** `heter`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=is%20called&op=translate`  
-* **and:** `och`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=and&op=translate`
+**Part A: New Vocabulary (8 words)**
 
-**Part B: New Phrases**
+* **I / Me:** Jag  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I\&op=translate  
+* **You:** Du  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=You\&op=translate  
+* **He:** Han  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=He\&op=translate  
+* **She:** Hon  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=She\&op=translate  
+* **What:** Vad  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=What\&op=translate  
+* **is called / is named:** heter  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=is%20called\&op=translate  
+* **and:** och  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=and\&op=translate  
+* **That is...:** Det är...  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=That%20is...\&op=translate
 
-* **What's your name?:** `Vad heter du?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=What%27s%20your%20name%3F&op=translate`  
-* **My name is...:** `Jag heter...`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=My%20name%20is...&op=translate`  
-* **My name is... and your name is...:** `Jag heter... och du heter...`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=My%20name%20is...%20and%20your%20name%20is...&op=translate`
+**Part B: New Phrases (5 phrases)**
 
-**Part C: Activity** **Creative Corner:** Write a short two-line dialogue. Person 1: Asks "What's your name?" in Swedish. Person 2: Responds with their name in Swedish.
+* **What's your name?:** Vad heter du?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=What%27s%20your%20name%3F\&op=translate  
+* **My name is...:** Jag heter...  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=My%20name%20is...\&op=translate  
+* **What is his name?:** Vad heter han?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=What%20is%20his%20name%3F\&op=translate  
+* **His name is...:** Han heter...  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=His%20name%20is...\&op=translate  
+* **Her name is...:** Hon heter...  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Her%20name%20is...\&op=translate
 
-**Part D: "Extra Reps"**
+**Part C: Activity / Reinforcement**
 
-* **Practice Tip:** Go around the room and ask everyone "Vad heter du?". Try to answer with your name when they ask you back\!
-
----
-
-### **Dag 4: Tisdag, 1 Juli (Day 4: Tuesday, July 1\)**
-
-**Today's Goal:** Learn to ask who *he* or *she* is.
-
-**Part A: New Vocabulary**
-
-* **He:** `Han`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=He&op=translate`  
-* **She:** `Hon`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=She&op=translate`  
-* **a boy:** `en pojke`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=a%20boy&op=translate`  
-* **a girl:** `en flicka`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=a%20girl&op=translate`  
-* **That is...:** `Det är...`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=That%20is...&op=translate`
-
-**Part B: New Phrases**
-
-* **What is his name?:** `Vad heter han?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=What%20is%20his%20name%3F&op=translate`  
-* **His name is...:** `Han heter...`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=His%20name%20is...&op=translate`  
-* **What is her name?:** `Vad heter hon?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=What%20is%20her%20name%3F&op=translate`  
-* **Her name is...:** `Hon heter...`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Her%20name%20is...&op=translate`
-
-**Part C: Activity** Fill in the blank with **han** or **hon**.
-
-1. \_\_\_\_ heter \[Dad's name\].  
-2. \_\_\_\_ är en flicka. (She is a girl)  
-3. Vad heter \_\_\_\_? (pointing to your brother)  
-4. Det är en pojke. \_\_\_\_ heter \[Brother's name\].
+* **Activity 1: Unscramble the Sentences**  
+  * du / heter / Vad / ? \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  * heter / Hon / \[Mom's Name\] / . \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+* **Activity 2: Creative Dialogue**  
+  * Write a 4-line conversation where you ask someone their name, they answer, and then you introduce your mom or dad.
 
 **Part D: "Extra Reps"**
 
-* **Practice Tip:** Look at a family photo and practice saying "Han heter..." and "Hon heter..." for different family members.
+* **Practice Tip:** The word heter is very specific to names. It's not used for objects. Think of it as meaning "is called" rather than just "is".
 
----
+**Part E: Advanced / Challenge Section**
 
-### **Dag 5: Onsdag, 2 Juli (Day 5: Wednesday, July 2\)**
+* **Challenge:** Learn the word vem (who). Now try to translate the question "Who is he?".  
+  * vem Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=who\&op=translate  
+  * (Answer: Vem är han?)
 
-**Today's Goal:** Learn how to ask how someone is feeling.
+### **Dag 3: Måndag, 2025-06-30**
 
-**Part A: New Vocabulary**
+**Today's Goal:** Learn to ask how people are and describe basic feelings.
 
-* **How:** `Hur`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=How&op=translate`  
-* **are you / feeling:** `mår du`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=are%20you&op=translate`  
-* **Good / Fine / Well:** `Bra`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Good&op=translate`  
-* **Just / Only:** `Bara`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Just&op=translate`  
-* **I feel... / I am feeling...:** `Jag mår...`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I%20feel&op=translate`
+**Part A: New Vocabulary (8 words)**
 
-**Part B: New Phrases**
+* **How:** Hur  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=How\&op=translate  
+* **are you / feeling:** mår du  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=are%20you\&op=translate  
+* **Good / Fine / Well:** Bra  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Good\&op=translate  
+* **Just / Only:** Bara  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Just\&op=translate  
+* **Happy:** Glad  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Happy\&op=translate  
+* **Tired:** Trött  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Tired\&op=translate  
+* **am / is / are:** är  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=is\&op=translate  
+* **but:** men  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=but\&op=translate
 
-* **How are you?:** `Hur mår du?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=How%20are%20you%3F&op=translate`  
-* **I'm fine, thanks.:** `Jag mår bra, tack.`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I%27m%20fine%2C%20thanks.&op=translate`  
-* **Just fine.:** `Bara bra.`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Just%20fine.&op=translate`
+**Part B: New Phrases (5 phrases)**
 
-**Part C: Activity** Unscramble the words to make a common Swedish question.
+* **How are you?:** Hur mår du?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=How%20are%20you%3F\&op=translate  
+* **I'm fine, thanks.:** Jag mår bra, tack.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%27m%20fine%2C%20thanks.\&op=translate  
+* **I am happy.:** Jag är glad.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20am%20happy\&op=translate  
+* **Are you tired?:** Är du trött?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Are%20you%20tired%3F\&op=translate  
+* **I am tired, but happy.:** Jag är trött, men glad.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20am%20tired%2C%20but%20happy\&op=translate
 
-* du / mår / Hur / ? \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_?
+**Part C: Activity / Reinforcement**
 
-**Part D: "Extra Reps"**
-
-* **Dialogue Practice:** Person A: "Hej\!" Person B: "Hej\!" Person A: "Hur mår du?" Person B: "Jag mår bra, tack. Hur mår du?" Person A: "Bara bra, tack\!"
-
----
-
-### **Dag 6: Torsdag, 3 Juli (Day 6: Thursday, July 3\)**
-
-**Today's Goal:** Expand on feelings.
-
-**Part A: New Vocabulary**
-
-* **Happy:** `Glad`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Happy&op=translate`  
-* **Tired:** `Trött`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Tired&op=translate`  
-* **Or:** `eller`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Or&op=translate`  
-* **am / is / are:** `är`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=is&op=translate`  
-* **I am...:** `Jag är...`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I%20am&op=translate`
-
-**Part B: New Phrases**
-
-* **I am happy.:** `Jag är glad.`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I%20am%20happy&op=translate`  
-* **I am tired.:** `Jag är trött.`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I%20am%20tired&op=translate`  
-* **Are you tired?:** `Är du trött?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Are%20you%20tired%3F&op=translate`  
-* **Happy or tired?:** `Glad eller trött?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Happy%20or%20tired%3F&op=translate`
-
-**Part C: Activity** **Creative Corner:** Draw two faces: one that is **glad** and one that is **trött**. Label them with the correct Swedish word.
+* **Activity 1: Question & Answer**  
+  * Hur mår du? \-\> Answer in a full sentence.  
+  * Är du glad? \-\> Answer with Ja or Nej and a full sentence.  
+  * Är han trött? (Is he tired?) \-\> Answer about your dad or brother.  
+* **Activity 2: Creative Corner**  
+  * Draw two faces: one that is glad and one that is trött. Label them with the correct Swedish word.
 
 **Part D: "Extra Reps"**
 
-* **Language Tip:** What's the difference between "Jag mår bra" and "Jag är glad"?  
-  * **Jag mår bra** \= I feel well / I'm doing well (a general state of being).  
-  * **Jag är glad** \= I am happy (a specific emotion).
+* **Language Tip:** Jag mår bra means "I feel well" (general state). Jag är glad means "I am happy" (a specific emotion). They are both good answers to Hur mår du?
 
----
+**Part E: Advanced / Challenge Section**
 
-### **Dag 7: Fredag, 4 Juli (Day 7: Friday, July 4\)**
+* **Challenge:** Learn the word också (also). Try to translate: "I am also tired."  
+  * också Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=also\&op=translate  
+  * (Answer: Jag är också trött.)
 
-**Today's Goal:** Learn numbers 1-5 and start counting things.
+### **Dag 4: Tisdag, 2025-07-01**
 
-**Part A: New Vocabulary**
+**Today's Goal:** Learn numbers 1-5 and start counting objects.
 
-* **One:** `En / Ett`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=One&op=translate`  
-* **Two:** `Två`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Two&op=translate`  
-* **Three:** `Tre`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Three&op=translate`  
-* **Four:** `Fyra`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Four&op=translate`  
-* **Five:** `Fem`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Five&op=translate`  
-* **a car:** `en bil`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=a%20car&op=translate`  
-* **an apple:** `ett äpple`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=an%20apple&op=translate`
+**Part A: New Vocabulary (9 words)**
 
-**Part B: New Phrases**
+* **One:** En / Ett  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=One\&op=translate  
+* **Two:** Två  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Two\&op=translate  
+* **Three:** Tre  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Three\&op=translate  
+* **Four:** Fyra  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Four\&op=translate  
+* **Five:** Fem  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Five\&op=translate  
+* **a car / cars:** en bil / bilar  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=a%20car%20/%20cars\&op=translate  
+* **an apple / apples:** ett äpple / äpplen  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=an%20apple%20/%20apples\&op=translate  
+* **a house / houses:** ett hus / hus  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=a%20house%20/%20houses\&op=translate  
+* **I have...:** Jag har...  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20have...\&op=translate
 
-* **One car:** `En bil`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=One%20car&op=translate`  
-* **One apple:** `Ett äpple`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=One%20apple&op=translate`  
-* **Two cars and one apple:** `Två bilar och ett äpple`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Two%20cars%20and%20one%20apple&op=translate`
+**Part B: New Phrases (4 phrases)**
 
-**Part C: Activity** Write the Swedish number next to the word.
+* **I have one car.:** Jag har en bil.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20have%20one%20car\&op=translate  
+* **I have two houses.:** Jag har två hus.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20have%20two%20houses\&op=translate  
+* **Three apples, please.:** Tre äpplen, tack.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Three%20apples%2C%20please\&op=translate  
+* **I see five cars.:** Jag ser fem bilar.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20see%20five%20cars\&op=translate
 
-1. Fem: \_\_\_  
-2. Ett: \_\_\_  
-3. Tre: \_\_\_  
-4. Två: \_\_\_  
-5. Fyra: \_\_\_
+**Part C: Activity / Reinforcement**
 
-**Part D: "Extra Reps"**
-
-* **Language Tip:** Why "en bil" but "ett äpple"? Swedish nouns have a "gender", either 'en' or 'ett'. You'll get the hang of it by just seeing and hearing which words use which.
-
----
-
-### **Dag 8: Lördag, 5 Juli (Day 8: Saturday, July 5\)**
-
-**Today's Goal:** Learn numbers 6-12 and ask "how many?"
-
-**Part A: New Vocabulary**
-
-* **Six:** `Sex`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Six&op=translate`  
-* **Seven:** `Sju`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Seven&op=translate`  
-* **Eight:** `Åtta`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Eight&op=translate`  
-* **Nine:** `Nio`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Nine&op=translate`  
-* **Ten:** `Tio`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Ten&op=translate`  
-* **Eleven:** `Elva`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Eleven&op=translate`  
-* **Twelve:** `Tolv`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Twelve&op=translate`  
-* **How many?:** `Hur många?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=How%20many%3F&op=translate`
-
-**Part B: New Phrases**
-
-* **How many cars?:** `Hur många bilar?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=How%20many%20cars%3F&op=translate`  
-* **Seven apples:** `Sju äpplen`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Seven%20apples&op=translate`  
-* **Eleven or twelve?:** `Elva eller tolv?`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Eleven%20or%20twelve%3F&op=translate`
-
-**Part C: Activity** Do some simple math in Swedish\! Write the answer as a Swedish word.
-
-1. Fyra \+ Två \= \_\_\_\_\_\_\_ (Sex)  
-2. Tio \+ Ett \= \_\_\_\_\_\_\_  
-3. Fem \+ Fem \= \_\_\_\_\_\_\_
+* **Activity 1: Counting Practice**  
+  1. Write the Swedish word for these numbers:  
+  2. 5 \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  3. 2 \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  4. 4 \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+* **Activity 2: Translate to Swedish**  
+  1. I have three houses. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  2. One car, please. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Part D: "Extra Reps"**
 
-* **Let's Sing\!:** Time to listen to the counting song "En-E-Elefant." It will help you remember the numbers\! The link is for a Youtube, as direct links can be unstable.  
-  * Search Link: `https://www.youtube.com/results?search_query=en+elefant+balanserade`
+* **Language Tip:** Why en bil but ett hus? Swedish nouns have two "genders", en and ett. You don't need to memorize rules, just learn which one goes with which word as you see them.
 
----
+**Part E: Advanced / Challenge Section**
 
-### **Dag 9: Söndag, 6 Juli (Day 9: Sunday, July 6\)**
+* **Challenge:** How would you say "I have two apples and one car"? (Hint: combine phrases you know with och).
 
-**Today's Goal:** Learn the special Swedish letters and review the week.
+### **Dag 5: Onsdag, 2025-07-02**
 
-**Part A: New Vocabulary**
+**Today's Goal:** Learn numbers 6-12 and ask "how many?".
+
+**Part A: New Vocabulary (9 words)**
+
+* **Six:** Sex  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Six\&op=translate  
+* **Seven:** Sju  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Seven\&op=translate  
+* **Eight:** Åtta  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Eight\&op=translate  
+* **Nine:** Nio  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Nine\&op=translate  
+* **Ten:** Tio  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Ten\&op=translate  
+* **Eleven:** Elva  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Eleven\&op=translate  
+* **Twelve:** Tolv  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Twelve\&op=translate  
+* **How many?:** Hur många?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=How%20many%3F\&op=translate  
+* **Zero:** Noll  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Zero\&op=translate
+
+**Part B: New Phrases (4 phrases)**
+
+* **How many cars?:** Hur många bilar?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=How%20many%20cars%3F\&op=translate  
+* **I have six apples.:** Jag har sex äpplen.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20have%20six%20apples\&op=translate  
+* **Seven or eight?:** Sju eller åtta?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Seven%20or%20eight%3F\&op=translate  
+* **Ten, eleven, twelve.:** Tio, elva, tolv.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Ten%2C%20eleven%2C%20twelve\&op=translate
+
+**Part C: Activity / Reinforcement**
+
+* **Activity 1: Simple Math**  
+  * Write the answer as a Swedish word.  
+  * Fem \+ Två \= \_\_\_\_\_\_\_  
+  * Tio \- Ett \= \_\_\_\_\_\_\_ (minus \= minus)  
+  * Sex \+ Sex \= \_\_\_\_\_\_\_  
+* **Activity 2: Ask the Question**  
+  * The answer is Elva bilar. What is the question in Swedish?  
+  * Question: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_?
+
+**Part D: "Extra Reps"**
+
+* **Practice Tip:** Try counting things you see around the house all the way up to twelve. Count books on a shelf, pillows on the couch, or plates on the table.
+
+**Part E: Advanced / Challenge Section**
+
+* **Challenge:** Learn the word kronor (crowns, the Swedish currency). Try to ask "How much does it cost?" which is Hur mycket kostar det?. A good answer is Det kostar tio kronor. (It costs 10 crowns).
+
+### **Dag 6: Torsdag, 2025-07-03**
+
+**Today's Goal:** Learn the special Swedish letters Å, Ä, Ö.
+
+**Part A: New Vocabulary (8 words)**
 
 * **Letter Å, å** (like 'o' in "more")  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=The%20letter%20A%20with%20a%20ring%20above%20it&op=translate`  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=The%20letter%20A%20with%20a%20ring%20above%20it\&op=translate  
 * **Letter Ä, ä** (like 'a' in "hair")  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=The%20letter%20A%20with%20two%20dots%20above%20it&op=translate`  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=The%20letter%20A%20with%20two%20dots%20above%20it\&op=translate  
 * **Letter Ö, ö** (like 'u' in "fur")  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=The%20letter%20O%20with%20two%20dots%20above%20it&op=translate`  
-* **boat:** `båt`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=boat&op=translate`  
-* **I understand:** `Jag förstår`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I%20understand&op=translate`  
-* **I don't understand:** `Jag förstår inte`  
-  * Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=I%20don%27t%20understand&op=translate`
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=The%20letter%20O%20with%20two%20dots%20above%20it\&op=translate  
+* **a boat:** en båt  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=a%20boat\&op=translate  
+* **to go / ride:** att åka  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=to%20ride\&op=translate  
+* **a shrimp:** en räka  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=a%20shrimp\&op=translate  
+* **an island:** en ö  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=an%20island\&op=translate  
+* **an ear:** ett öra  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=an%20ear\&op=translate
 
-**Part B: Weekly Review Activity** Have a short conversation using as many words from this week as possible.
+**Part B: New Phrases (4 phrases)**
 
-* **Person 1:** Hej\! Hur mår du?  
-* **Person 2:** Hej\! Jag mår bra. Jag är glad\! Vad heter du?  
-* **Person 1:** Jag heter \[Name\].  
-* **Person 2:** Hej då\!  
-* **Person 1:** Vi ses\!
+* **I'm riding in a boat.:** Jag åker båt.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%27m%20riding%20in%20a%20boat\&op=translate  
+* **We are on an island.:** Vi är på en ö.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=We%20are%20on%20an%20island\&op=translate  
+* **I am eating a shrimp.:** Jag äter en räka.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20am%20eating%20a%20shrimp\&op=translate  
+* **Eight boats.:** Åtta båtar.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Eight%20boats\&op=translate
 
-**Part C: Week 1 Quiz** Translate these sentences to Swedish.
+**Part C: Activity / Reinforcement**
 
-1. Hello, my name is \[Name\].  
-2. How are you?  
-3. I am tired.  
-4. Ten apples, please.  
-5. Thank you very much.
+* **Activity 1: Letter Sorting**  
+  * Which special letter (Å, Ä, or Ö) is in each of these Swedish words?  
+  * båt \-\> \_\_\_  
+  * räka \-\> \_\_\_  
+  * öra \-\> \_\_\_  
+  * Åtta \-\> \_\_\_  
+  * äpple \-\> \_\_\_  
+* **Activity 2: Creative Corner**  
+  * Draw a picture of an ö (island) with a båt (boat) next to it.
 
 **Part D: "Extra Reps"**
 
-* **Cultural Fun Fact:** The letters Å, Ä, and Ö are not just variations of A and O. They are unique letters at the very end of the Swedish alphabet (...X, Y, Z, Å, Ä, Ö).
+* **Cultural Fun Fact:** Å, Ä, and Ö are not just A and O with dots; they are separate, official letters of the Swedish alphabet. They come at the very end, after Z, in the order: ...X, Y, Z, Å, Ä, Ö.
 
-Congratulations on finishing your first, extra-long week\! **Jättebra jobbat\!** (Really good work\!)
+**Part E: Advanced / Challenge Section**
 
-* Pronunciation Link: `https://translate.google.com/?sl=en&tl=sv&text=Really%20good%20work&op=translate`
+* **Challenge:** Learn the word förstår (understand). Try to say "I understand" and "I don't understand".  
+  * förstår Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=understand\&op=translate  
+  * (Answers: Jag förstår and Jag förstår inte)
+
+### **Dag 7: Fredag, 2025-07-04**
+
+**Today's Goal:** Learn to use the word "not" (inte) and talk about languages.
+
+**Part A: New Vocabulary (8 words)**
+
+* **understand:** förstår  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=understand\&op=translate  
+* **not:** inte  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=not\&op=translate  
+* **Swedish:** svenska  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Swedish\&op=translate  
+* **English:** engelska  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=English\&op=translate  
+* **a little:** lite  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=a%20little\&op=translate  
+* **to speak / talk:** pratar  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=to%20speak\&op=translate  
+* **or:** eller  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=or\&op=translate  
+* **we:** vi  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=we\&op=translate
+
+**Part B: New Phrases (5 phrases)**
+
+* **I understand.:** Jag förstår.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20understand\&op=translate  
+* **I don't understand.:** Jag förstår inte.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20don%27t%20understand\&op=translate  
+* **I am not tired.:** Jag är inte trött.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20am%20not%20tired\&op=translate  
+* **I speak a little Swedish.:** Jag pratar lite svenska.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20speak%20a%20little%20Swedish\&op=translate  
+* **Do you speak English?:** Pratar du engelska?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=Do%20you%20speak%20English%3F\&op=translate
+
+**Part C: Activity / Reinforcement**
+
+* **Activity 1: Make it Negative**  
+  1. Add inte to make these sentences negative.  
+  2. Jag är glad. \-\> Jag är inte glad.  
+  3. Jag har en bil. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  4. Han är trött. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+* **Activity 2: Translate to Swedish**  
+  1. We speak English. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  2. I don't understand Swedish. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Part D: "Extra Reps"**
+
+* **Language Tip:** The word inte (not) usually comes right after the verb. Jag \*\*är inte\*\* trött. Jag \*\*har inte\*\* en bil. This is a very important rule\!
+
+**Part E: Advanced / Challenge Section**
+
+* **Challenge:** Combine what you've learned. How would you say: "I speak a little Swedish, but I am not happy."?
+
+### **Dag 8: Lördag, 2025-07-05**
+
+**Today's Goal:** Review numbers and apply them to a real-world situation: money.
+
+**Part A: New Vocabulary (8 words)**
+
+* **money:** pengar  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=money\&op=translate  
+* **crowns (currency):** kronor  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=crowns\&op=translate  
+* **it costs:** det kostar  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=it%20costs\&op=translate  
+* **how much?:** hur mycket?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=how%20much%3F\&op=translate  
+* **to buy:** att köpa  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=to%20buy\&op=translate  
+* **an ice cream:** en glass  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=an%20ice%20cream\&op=translate  
+* **a bun:** en bulle  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=a%20bun\&op=translate  
+* **I would like...:** Jag skulle vilja ha...  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20would%20like...\&op=translate
+
+**Part B: New Phrases (4 phrases)**
+
+* **How much does it cost?:** Hur mycket kostar det?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=How%20much%20does%20it%20cost%3F\&op=translate  
+* **It costs ten crowns.:** Det kostar tio kronor.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=It%20costs%20ten%20crowns\&op=translate  
+* **I would like to buy an ice cream.:** Jag skulle vilja köpa en glass.  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=I%20would%20like%20to%20buy%20an%20ice%20cream\&op=translate  
+* **How much for two buns?:** Hur mycket för två bullar?  
+  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=How%20much%20for%20two%20buns%3F\&op=translate
+
+**Part C: Activity / Reinforcement**
+
+* **Activity 1: At the Cafe**  
+  * An ice cream costs 10 kronor. A bun costs 5 kronor.  
+  * How much for one ice cream and one bun? (Answer in Swedish) \-\> Det kostar \\\_\\\_\\\_\\\_\\\_\\\_\\\_ kronor.  
+  * How much for two ice creams? \-\> Det kostar \\\_\\\_\\\_\\\_\\\_\\\_\\\_ kronor.  
+* **Activity 2: Roleplay**  
+  * You want to buy a bun. How do you ask for it politely in Swedish?  
+  * You: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Part D: "Extra Reps"**
+
+* **Cultural Tip:** Swedish currency is the "krona" (singular) and "kronor" (plural). You will often see prices written as "10 kr".
+
+**Part E: Advanced / Challenge Section**
+
+* **Challenge Dialogue:**  
+  * You: Hej\! Hur mycket kostar en glass?  
+  * Cashier: Tjugo kronor. (20 crowns)  
+  * You: Ok, jag skulle vilja ha en glass, tack.  
+  * How much does the ice cream cost? Write the number: \_\_\_\_\_\_\_\_
+
+### **Dag 9: Söndag, 2025-07-06**
+
+**Today's Goal:** Review the entire week and put it all together.
+
+**Part A: Key Vocabulary Review**
+
+* Review these key words: Hej, Tack, Varsågod, Ja, Nej, Jag, Du, Han, Hon, heter, mår, Glad, Trött, En through Tolv, båt, äpple, bil, förstår, inte, kronor.
+
+**Part B: Key Phrase Review**
+
+* Vad heter du?  
+* Hur mår du?  
+* Jag mår bra.  
+* Jag har \\\_\\\_\\\_ bilar.  
+* Hur många?  
+* Jag förstår inte.  
+* Hur mycket kostar det?
+
+**Part C: Activity / Reinforcement**
+
+* Activity 1: Vocabulary Matching  
+  | Swedish Word | English Description |  
+  | :--- | :--- |  
+  | 1\. Trött | A. How many? |  
+  | 2\. Tolv | B. Thank you |  
+  | 3\. Hur många? | C. Tired |  
+  | 4\. Båt | D. Twelve |  
+  | 5\. Tack | E. Boat |  
+* **Activity 2: Translate to Swedish**  
+  1. Hello, my name is \[Name\]. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  2. I am happy, but not tired. \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  3. How much does an apple cost? \-\> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Part D: "Extra Reps"**
+
+* **Look Ahead:** Congratulations on finishing the first week\! You've learned the absolute essentials. Next week, we move on to family (familj), where you'll learn the words for farmor, farfar, and your cousins\!
+
+**Part E: Advanced / Challenge Section**
+
+* **Creative Writing Challenge:** Write a short paragraph (3-4 sentences) in Swedish using words from the entire week.  
+  * Example: Hej\! Jag heter \[Name\]. Jag mår bra. Jag skulle vilja köpa en glass. Det kostar tio kronor. Jag förstår svenska\! Hej då\!  
+* 
 

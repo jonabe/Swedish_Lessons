@@ -10,12 +10,15 @@
 <body>
     <div class="container">
         <button class="hamburger-menu material-icons">menu</button>
+        <div class="version-info">
+            <span id="version-text"></span>
+            <a href="#" id="mode-toggle"></a>
+        </div>
         <aside class="sidebar">
             <h1>Swedish Lessons</h1>
             <nav>
-                <ul>
-                    <li><a href="#" id="week1-link" class="active">Week 1</a></li>
-                    <!-- Future weeks can be added here -->
+                <ul id="week-list">
+                    <!-- Week links will be dynamically generated -->
                 </ul>
             </nav>
             <div class="reminder-section" id="reminder-section" style="display: none;">

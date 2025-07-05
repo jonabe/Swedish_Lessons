@@ -1,18 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
     const lessonDisplay = document.getElementById('lesson-display');
-    const week1Link = document.getElementById('week1-link');
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const sidebar = document.querySelector('.sidebar');
     
-    // iOS detection
-    //const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    const isIOS = true; // Force iOS mode for development
+    // Check if we need to reload based on date change
+    const lastLoadDate = localStorage.getItem('swedishLessonsLastLoadDate');
+    const todayDate = new Date().toDateString();
+    
+    if (lastLoadDate && lastLoadDate !== todayDate) {
+        // Date has changed, reload the page to get fresh data
+        localStorage.setItem('swedishLessonsLastLoadDate', todayDate);
+        location.reload();
+        return;
+    }
+    
+    // Store today's date
+    localStorage.setItem('swedishLessonsLastLoadDate', todayDate);
+    
+    // Version info - update this when making changes
+    const VERSION = '1.0.0';
+    const LAST_MODIFIED = '2025-07-05 12:51 ET';
+    
+    // iOS detection with override from localStorage
+    const savedMode = localStorage.getItem('swedishLessonsIOSMode');
+    if (savedMode !== null) {
+        isIOS = savedMode === 'true';
+    } else {
+        // Default to iOS mode unless explicitly set otherwise
+        isIOS = true;
+    }
+    
     if (isIOS) {
         document.body.classList.add('ios-device');
     }
+    
+    // Set up version info and mode toggle
+    const versionText = document.getElementById('version-text');
+    const modeToggle = document.getElementById('mode-toggle');
+    
+    versionText.textContent = `v${VERSION} (${LAST_MODIFIED})`;
+    modeToggle.textContent = isIOS ? 'Desktop' : 'Mobile';
+    
+    modeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        isIOS = !isIOS;
+        localStorage.setItem('swedishLessonsIOSMode', isIOS.toString());
+        location.reload();
+    });
     async function loadLesson(weekNumber) {
         try {
-            const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
+            // Load the appropriate week file
+            const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_${weekNumber}.md`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -31,30 +69,45 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function updateDaySubmenu(weekNumber, dayAnchors) {
         // Find or create submenu container
-        const week1Link = document.getElementById('week1-link');
-        const weekLi = week1Link.parentElement;
+        const weekLink = document.getElementById(`week${weekNumber}-link`);
+        if (!weekLink) return;
+        const weekLi = weekLink.parentElement;
         
         // Check if submenu already exists
         const existingSubmenu = weekLi.querySelector('.day-submenu');
         if (existingSubmenu) {
-            // Submenu already exists, don't recreate it
+            // Submenu already exists, just show it
+            weekLink.classList.remove('collapsed');
+            weekLink.classList.add('expanded');
+            existingSubmenu.style.display = 'block';
             return;
         }
         
         // Add expand/collapse functionality to week link
-        week1Link.classList.add('has-submenu');
-        week1Link.classList.add('collapsed'); // Start collapsed
+        weekLink.classList.add('has-submenu');
+        weekLink.classList.add('expanded'); // Start expanded when created
         
         // Create new submenu
         const submenu = document.createElement('ul');
         submenu.className = 'day-submenu';
-        submenu.style.display = 'none'; // Hidden by default
+        submenu.style.display = 'block'; // Show when created
+        
+        // Get today's date in the format used in lessons
+        const today = new Date();
+        const todayFormatted = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
         
         dayAnchors.forEach(day => {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.href = `#${day.anchorId}`;
-            a.textContent = `Day ${day.number}`;
+            
+            // Check if this is today's lesson
+            if (day.englishDate === todayFormatted) {
+                a.textContent = `Day ${day.number} (today)`;
+                a.classList.add('today');
+            } else {
+                a.textContent = `Day ${day.number}`;
+            }
             a.title = day.englishDate;
             
             // Add click handler for smooth scrolling
@@ -76,27 +129,31 @@ document.addEventListener('DOMContentLoaded', () => {
         
         weekLi.appendChild(submenu);
         
-        // Remove any existing click handlers first
-        const newWeek1Link = week1Link.cloneNode(true);
-        week1Link.parentNode.replaceChild(newWeek1Link, week1Link);
-        
-        // Add toggle functionality to week link
-        newWeek1Link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isCollapsed = newWeek1Link.classList.contains('collapsed');
+        // Store the toggle handler to avoid multiple bindings
+        if (!weekLink.hasToggleHandler) {
+            weekLink.hasToggleHandler = true;
             
-            if (isCollapsed) {
-                newWeek1Link.classList.remove('collapsed');
-                newWeek1Link.classList.add('expanded');
-                submenu.style.display = 'block';
-            } else {
-                newWeek1Link.classList.remove('expanded');
-                newWeek1Link.classList.add('collapsed');
-                submenu.style.display = 'none';
-            }
-            
-            // Don't reload the lesson, just toggle the menu
-        });
+            // Add toggle functionality to week link
+            weekLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const submenuElement = weekLi.querySelector('.day-submenu');
+                if (!submenuElement) return;
+                
+                const isCollapsed = weekLink.classList.contains('collapsed');
+                
+                if (isCollapsed) {
+                    weekLink.classList.remove('collapsed');
+                    weekLink.classList.add('expanded');
+                    submenuElement.style.display = 'block';
+                } else {
+                    weekLink.classList.remove('expanded');
+                    weekLink.classList.add('collapsed');
+                    submenuElement.style.display = 'none';
+                }
+            });
+        }
     }
 
     function displayLesson(markdownContent) {
@@ -116,12 +173,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const line = lines[i];
             
             // Check for day headings and add anchors
-            const dayMatch = line.match(/^### \*\*Dag (\d+): (.+?) \(Day \d+: (.+?)\\\)\*\*$/);
+            // Handle both old format: ### **Dag 1: Lördag, 28 Juni (Day 1: Saturday, June 28)**
+            // And new format: ### **Dag 1: Lördag, 2025-06-28**
+            const dayMatchOld = line.match(/^### \*\*Dag (\d+): (.+?) \(Day \d+: (.+?)\\\)\*\*$/);
+            const dayMatchNew = line.match(/^### \*\*Dag (\d+): [^,]+, (\d{4}-\d{2}-\d{2})\*\*$/);
+            const dayMatch = dayMatchOld || dayMatchNew;
+            
             if (dayMatch) {
                 const dayNumber = dayMatch[1];
-                const swedishDate = dayMatch[2];
-                const englishDate = dayMatch[3];
                 const anchorId = `day${dayNumber}`;
+                let englishDate;
+                let swedishDate;
+                
+                if (dayMatchOld) {
+                    swedishDate = dayMatchOld[2];
+                    englishDate = dayMatchOld[3];
+                } else {
+                    // For new format, extract the Swedish day and date
+                    const fullMatch = line.match(/: ([^,]+), (\d{4}-\d{2}-\d{2})/);
+                    swedishDate = fullMatch[1];
+                    englishDate = fullMatch[2];
+                }
                 
                 // Store day info for submenu
                 dayAnchors.push({
@@ -132,7 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 // Add anchor to the heading
-                processedLines.push(`### <span id="${anchorId}"></span>**Dag ${dayNumber}: ${swedishDate} (Day ${dayNumber}: ${englishDate}\\)**`);
+                if (dayMatchOld) {
+                    // Old format keeps the full structure
+                    processedLines.push(`### <span id="${anchorId}"></span>**Dag ${dayNumber}: ${dayMatchOld[2]} (Day ${dayNumber}: ${englishDate}\\)**`);
+                } else {
+                    // New format is simpler
+                    processedLines.push(`### <span id="${anchorId}"></span>**Dag ${dayNumber}: ${swedishDate}, ${englishDate}**`);
+                }
                 i++;
                 continue;
             }
@@ -140,7 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if next line is a pronunciation link
             if (i + 1 < lines.length) {
                 const nextLine = lines[i + 1];
-                const pronunciationMatch = nextLine.match(/^\s+\*\s*Pronunciation Link:\s*`[^`]+`/);
+                // Match pronunciation links with or without backticks
+                const pronunciationMatch = nextLine.match(/^\s+\*\s*Pronunciation Link:\s*(`[^`]+`|https:\/\/[^\s]+)/);
                 
                 if (pronunciationMatch) {
                     let swedishWord = null;
@@ -151,23 +230,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (backtickMatch) {
                         swedishWord = backtickMatch[1];
                     } else {
-                        // Pattern 2: Letter patterns (e.g., **Letter Å, å**)
-                        const letterMatch = line.match(/\*\*Letter ([ÅÄÖåäö]), [ÅÄÖåäö]\*\*/);
-                        if (letterMatch) {
-                            swedishWord = letterMatch[1];
+                        // Pattern 2: Word after colon without backticks (e.g., **Hello:** Hej)
+                        const noBacktickMatch = line.match(/\*\*[^:]+:\*\*\s*([^`\s]+.*?)$/);
+                        if (noBacktickMatch) {
+                            swedishWord = noBacktickMatch[1].trim();
                         } else {
-                            // Pattern 3: Word with colon and backticks (e.g., **boat:** `båt`)
-                            const wordMatch = line.match(/\*\*[^:]+:\*\*\s*`([^`]+)`/);
-                            if (wordMatch) {
-                                swedishWord = wordMatch[1];
+                            // Pattern 3: Letter patterns (e.g., **Letter Å, å**)
+                            const letterMatch = line.match(/\*\*Letter ([ÅÄÖåäö]), [ÅÄÖåäö]\*\*/);
+                            if (letterMatch) {
+                                swedishWord = letterMatch[1];
+                            } else {
+                                // Pattern 4: Word with colon and backticks (e.g., **boat:** `båt`)
+                                const wordMatch = line.match(/\*\*[^:]+:\*\*\s*`([^`]+)`/);
+                                if (wordMatch) {
+                                    swedishWord = wordMatch[1];
+                                }
                             }
                         }
                     }
                     
                     if (swedishWord) {
-                        // Extract the Google Translate URL
-                        const urlMatch = nextLine.match(/`(https:\/\/translate\.google\.com\/[^`]+)`/);
-                        const googleUrl = urlMatch ? urlMatch[1] : `https://translate.google.com/?sl=en&tl=sv&text=${encodeURIComponent(swedishWord)}&op=translate`;
+                        // Extract the Google Translate URL (with or without backticks)
+                        const urlWithBackticks = nextLine.match(/`(https:\/\/translate\.google\.com\/[^`]+)`/);
+                        const urlWithoutBackticks = nextLine.match(/(https:\/\/translate\.google\.com\/[^\s]+)/);
+                        const urlMatch = urlWithBackticks || urlWithoutBackticks;
+                        let googleUrl = urlMatch ? urlMatch[1] : `https://translate.google.com/?sl=en&tl=sv&text=${encodeURIComponent(swedishWord)}&op=translate`;
+                        
+                        // Fix escaped ampersands in URLs
+                        googleUrl = googleUrl.replace(/\\&/g, '&');
                         
                         // Add the button placeholder to the current line with both text and URL
                         processedLines.push(line + ` <button class="pronunciation-button" data-text-to-speak="${swedishWord}" data-google-url="${googleUrl}" aria-label="Play pronunciation for ${swedishWord}"><span class="material-icons">volume_up</span></button>`);
@@ -186,7 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fix escaped characters before markdown conversion
         // This handles common markdown escapes that shouldn't be escaped in our context
         const escapeReplacements = [
-            [/\\_/g, '_'],   // Underscores
+            [/\\\\\\_/g, '_'],  // Triple backslash underscores (from Week 2)
+            [/\\\\/g, '\\'],  // Double backslashes
+            [/\\_/g, '_'],   // Single backslash underscores
             [/\\-/g, '-'],   // Hyphens/dashes
             [/\\\*/g, '*'],  // Asterisks
             [/\\\(/g, '('],  // Opening parentheses
@@ -290,10 +382,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to find yesterday's vocabulary
     async function loadYesterdaysVocabulary() {
         try {
-            const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
+            // Load week 1 for vocabulary
+            const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_1.md`);
             if (!response.ok) {
-                console.error('Failed to load lesson file');
-                return;
+                    return;
             }
             
             const text = await response.text();
@@ -306,16 +398,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get today's date as fallback
             const today = new Date();
             
-            // Format dates to match the markdown (e.g., "Saturday, June 28")
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                           'July', 'August', 'September', 'October', 'November', 'December'];
-            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            // Format dates to match the new markdown format (e.g., "2025-06-28")
+            const formatDate = (date) => {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            };
             
-            // Remove year to make it work across different years
-            const yesterdayFormatted = `${days[yesterday.getDay()]}, ${months[yesterday.getMonth()]} ${yesterday.getDate()}`;
-            const todayFormatted = `${days[today.getDay()]}, ${months[today.getMonth()]} ${today.getDate()}`;
+            const yesterdayFormatted = formatDate(yesterday);
+            const todayFormatted = formatDate(today);
             
-            console.log('Looking for dates:', yesterdayFormatted, 'or', todayFormatted);
             
             // Find the section for yesterday (or today as fallback)
             let foundDate = false;
@@ -368,8 +461,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         cleanLine = cleanLine.replace(/\\'/g, "'");
                         cleanLine = cleanLine.replace(/\\"/g, '"');
                         
-                        // Match patterns like: * **English:** `Swedish`
-                        const match = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*`([^`]+)`/);
+                        // Match patterns like: * **English:** `Swedish` or * **English:** Swedish
+                        const matchWithBackticks = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*`([^`]+)`/);
+                        const matchWithoutBackticks = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*([^`\n]+)$/);
+                        const match = matchWithBackticks || matchWithoutBackticks;
                         if (match) {
                             let english = match[1].trim();
                             const swedish = match[2].trim();
@@ -465,10 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // If we found vocabulary from either date, show reminder
             if (foundDate && (partAWords.length > 0 || partBWords.length > 0)) {
-                console.log('Found vocabulary words:', partAWords.length, 'in Part A,', partBWords.length, 'in Part B');
                 showReminder(partAWords, partBWords);
             } else {
-                console.log('No vocabulary found for yesterday or today');
                 // Try showing from first available day as fallback
                 loadFirstDayVocabulary();
             }
@@ -534,7 +627,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to load vocabulary from the first day as fallback
     async function loadFirstDayVocabulary() {
         try {
-            const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
+            // Load week 1 for vocabulary
+            const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_1.md`);
             if (!response.ok) return;
             
             const text = await response.text();
@@ -553,7 +647,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (line.match(/^### \*\*Dag \d+:/) || line.includes('**Dag 1:')) {
                     if (!foundDay) {
                         foundDay = true;
-                        console.log('Found first day:', line);
                     } else {
                         // We hit another day, stop
                         break;
@@ -589,8 +682,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         cleanLine = cleanLine.replace(/\\'/g, "'");
                         cleanLine = cleanLine.replace(/\\"/g, '"');
                         
-                        // Match patterns like: * **English:** `Swedish`
-                        const match = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*`([^`]+)`/);
+                        // Match patterns like: * **English:** `Swedish` or * **English:** Swedish
+                        const matchWithBackticks = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*`([^`]+)`/);
+                        const matchWithoutBackticks = cleanLine.match(/\*\s*\*\*([^:]+):\*\*\s*([^`\n]+)$/);
+                        const match = matchWithBackticks || matchWithoutBackticks;
                         if (match) {
                             let english = match[1].trim();
                             const swedish = match[2].trim();
@@ -611,7 +706,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             if (partAWords.length > 0 || partBWords.length > 0) {
-                console.log('Using first day vocabulary as fallback');
                 showReminder(partAWords, partBWords);
             }
             
@@ -620,8 +714,111 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initial load for Week 1
-    loadLesson(1);
+    // Dynamically discover available weeks
+    async function discoverWeeks() {
+        const weeks = [];
+        let weekNum = 1;
+        
+        // Try to find all available week files
+        while (true) {
+            try {
+                const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_${weekNum}.md`);
+                if (response.ok) {
+                    weeks.push(weekNum);
+                    weekNum++;
+                } else {
+                    break;
+                }
+            } catch {
+                break;
+            }
+        }
+        
+        return weeks;
+    }
+    
+    // Create week navigation
+    async function createWeekNavigation() {
+        const weekList = document.getElementById('week-list');
+        const weeks = await discoverWeeks();
+        
+        if (weeks.length === 0) {
+            console.error('No lesson weeks found');
+            return 1; // Default to week 1
+        }
+        
+        // Define date ranges for each week (can be expanded as needed)
+        const weekDateRanges = {
+            1: { start: new Date('2025-06-28'), end: new Date('2025-07-06') },
+            2: { start: new Date('2025-07-07'), end: new Date('2025-07-13') }
+            // Add more weeks as needed
+        };
+        
+        const today = new Date();
+        let initialWeek = 1;
+        let currentWeekFound = false;
+        
+        // Create week links
+        weeks.forEach(weekNum => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#';
+            a.id = `week${weekNum}-link`;
+            a.textContent = `Week ${weekNum}`;
+            
+            // Check if this week contains today
+            const range = weekDateRanges[weekNum];
+            if (range && today >= range.start && today <= range.end) {
+                a.classList.add('active');
+                initialWeek = weekNum;
+                currentWeekFound = true;
+            } else if (!currentWeekFound && weekNum === weeks[weeks.length - 1]) {
+                // If no current week found and this is the last week, make it active
+                a.classList.add('active');
+                initialWeek = weekNum;
+            }
+            
+            // Add click handler
+            a.addEventListener('click', (e) => {
+                // If this week already has a submenu, let the toggle handler handle it
+                if (a.classList.contains('has-submenu')) {
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                // Update active state
+                document.querySelectorAll('#week-list a').forEach(link => link.classList.remove('active'));
+                a.classList.add('active');
+                
+                // Hide other week submenus but don't remove them
+                document.querySelectorAll('.day-submenu').forEach(submenu => {
+                    submenu.style.display = 'none';
+                });
+                
+                // Collapse other week links
+                document.querySelectorAll('.has-submenu').forEach(link => {
+                    if (link !== a) {
+                        link.classList.remove('expanded');
+                        link.classList.add('collapsed');
+                    }
+                });
+                
+                // Load the week
+                loadLesson(weekNum);
+            });
+            
+            li.appendChild(a);
+            weekList.appendChild(li);
+        });
+        
+        return initialWeek;
+    }
+    
+    // Initialize week navigation and load initial week
+    createWeekNavigation().then(initialWeek => {
+        loadLesson(initialWeek);
+    });
     
     // Load yesterday's vocabulary with a small delay to ensure DOM is ready
     setTimeout(() => {
@@ -633,7 +830,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.remove('hidden');
     }
 
-    // Note: Week 1 click handler is now managed in updateDaySubmenu function
 
     // Toggle sidebar visibility on hamburger menu click
     hamburgerMenu.addEventListener('click', () => {
@@ -676,4 +872,16 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+    
+    // Check periodically if the date has changed (every minute)
+    setInterval(() => {
+        const currentDate = new Date().toDateString();
+        const storedDate = localStorage.getItem('swedishLessonsLastLoadDate');
+        
+        if (storedDate && storedDate !== currentDate) {
+            // Date has changed, update the stored date and reload
+            localStorage.setItem('swedishLessonsLastLoadDate', currentDate);
+            location.reload();
+        }
+    }, 60000); // Check every minute
 });

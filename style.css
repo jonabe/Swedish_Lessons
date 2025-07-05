@@ -26,8 +26,8 @@ body {
 
 .hamburger-menu {
     position: fixed; /* Changed to fixed so it stays in place */
-    top: 10px; /* Moved up from 15px */
-    left: 15px;
+    top: 20px; /* Same as version-info */
+    left: 25px; /* Same distance from edge as version-info */
     background: rgba(255, 255, 255, 0.9);
     border: none;
     font-size: 2em;
@@ -46,6 +46,31 @@ body {
 
 .hamburger-menu:hover {
     background-color: rgba(255, 255, 255, 1);
+}
+
+/* Version info styles */
+.version-info {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    font-size: 0.75em;
+    color: #666;
+    z-index: 1500;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.version-info a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.version-info a:hover {
+    text-decoration: underline;
 }
 
 /* Force iOS styling to override the above */
@@ -255,6 +280,16 @@ body {
 .day-submenu li a:hover {
     background-color: #444;
     color: #fff;
+}
+
+.day-submenu li a.today {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+}
+
+.day-submenu li a.today:hover {
+    background-color: #45a049;
 }
 
 /* Reminder section styles */
