@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Version info - update this when making changes
     const VERSION = '1.0.0';
-    const LAST_MODIFIED = '2025-07-05 12:51 ET';
+    const LAST_MODIFIED = '2025-07-05 12:55 ET';
     
     // iOS detection with override from localStorage
     const savedMode = localStorage.getItem('swedishLessonsIOSMode');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadLesson(weekNumber) {
         try {
             // Load the appropriate week file
-            const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_${weekNumber}.md`);
+            const response = await fetch(`lessons/Svenska_for_semestern_vecka_${weekNumber}.md`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadYesterdaysVocabulary() {
         try {
             // Load week 1 for vocabulary
-            const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_1.md`);
+            const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
             if (!response.ok) {
                     return;
             }
@@ -628,7 +628,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadFirstDayVocabulary() {
         try {
             // Load week 1 for vocabulary
-            const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_1.md`);
+            const response = await fetch(`lessons/Svenska_for_semestern_vecka_1.md`);
             if (!response.ok) return;
             
             const text = await response.text();
@@ -722,7 +722,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Try to find all available week files
         while (true) {
             try {
-                const response = await fetch(`lessons/Svenska_for_Semestern_Vecka_${weekNum}.md`);
+                const response = await fetch(`lessons/Svenska_for_semestern_vecka_${weekNum}.md`);
                 if (response.ok) {
                     weeks.push(weekNum);
                     weekNum++;
