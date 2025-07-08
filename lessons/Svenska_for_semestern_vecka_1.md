@@ -384,11 +384,11 @@ A. When you are leaving.B. In the morning.C. In the evening.
 **Part A: New Vocabulary (6 words)**
 
 * **Letter Å, å** (like 'o' in "more")  
-  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=The%20letter%20A%20with%20a%20ring%20above%20it\&op=translate  
+
 * **Letter Ä, ä** (like 'a' in "hair")  
-  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=The%20letter%20A%20with%20two%20dots%20above%20it\&op=translate  
+
 * **Letter Ö, ö** (like 'u' in "fur")  
-  * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=The%20letter%20O%20with%20two%20dots%20above%20it\&op=translate  
+ 
 * **boat:** båt  
   * Pronunciation Link: https://translate.google.com/?sl=en\&tl=sv\&text=boat\&op=translate  
 * **I understand:** Jag förstår  
