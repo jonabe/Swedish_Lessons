@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Version info - update this when making changes
     const VERSION = '1.0.0';
-    const LAST_MODIFIED = '2025-07-05 12:55 ET';
+    const LAST_MODIFIED = '2025-07-05 12:56 ET';
     
     // iOS detection with override from localStorage
     const savedMode = localStorage.getItem('swedishLessonsIOSMode');
@@ -780,32 +780,48 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Add click handler
             a.addEventListener('click', (e) => {
-                // If this week already has a submenu, let the toggle handler handle it
-                if (a.classList.contains('has-submenu')) {
-                    return;
-                }
-                
                 e.preventDefault();
+                e.stopPropagation();
+                
+                // Check if clicking on a different week than the active one
+                const isCurrentlyActive = a.classList.contains('active');
+                const hasSubmenu = a.classList.contains('has-submenu');
                 
                 // Update active state
                 document.querySelectorAll('#week-list a').forEach(link => link.classList.remove('active'));
                 a.classList.add('active');
                 
-                // Hide other week submenus but don't remove them
-                document.querySelectorAll('.day-submenu').forEach(submenu => {
-                    submenu.style.display = 'none';
-                });
-                
-                // Collapse other week links
-                document.querySelectorAll('.has-submenu').forEach(link => {
-                    if (link !== a) {
+                if (!isCurrentlyActive) {
+                    // Switching to a different week
+                    // Hide other week submenus
+                    document.querySelectorAll('.day-submenu').forEach(submenu => {
+                        submenu.style.display = 'none';
+                    });
+                    
+                    // Collapse other week links
+                    document.querySelectorAll('.has-submenu').forEach(link => {
                         link.classList.remove('expanded');
                         link.classList.add('collapsed');
+                    });
+                    
+                    // Load the week
+                    loadLesson(weekNum);
+                } else if (hasSubmenu) {
+                    // Clicking on the same week that already has a submenu - just toggle it
+                    const submenu = a.parentElement.querySelector('.day-submenu');
+                    if (submenu) {
+                        const isExpanded = a.classList.contains('expanded');
+                        if (isExpanded) {
+                            a.classList.remove('expanded');
+                            a.classList.add('collapsed');
+                            submenu.style.display = 'none';
+                        } else {
+                            a.classList.remove('collapsed');
+                            a.classList.add('expanded');
+                            submenu.style.display = 'block';
+                        }
                     }
-                });
-                
-                // Load the week
-                loadLesson(weekNum);
+                }
             });
             
             li.appendChild(a);
